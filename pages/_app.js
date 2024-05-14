@@ -14,11 +14,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       <Head>
-        <title>Orgarium - Agriculture Farming React Template</title>
+        <title>EasyBites - Bread & Cookies</title>
         {/*====== Favicon Icon ======*/}
         <link
           rel="shortcut icon"
-          href="assets/images/favicon.ico"
+          href="assets/images/favicon-easybites.svg"
           type="image/png"
         />
         {/*====== FontAwesome css ======*/}
