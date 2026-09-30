@@ -20,7 +20,7 @@ function HangingSign() {
   
   return (
     // Positioned relative to the bakery model
-    <group position={[-2.5, 3.5, 2.5]} ref={signRef}>
+    <group position={[-1.6, 3.5, 2.0]} ref={signRef}>
       {/* Wire/pole - shortened by 1/4 */}
       <mesh position={[0, 3, 0]}>
         <cylinderGeometry args={[0.03, 0.03, 6, 16]} />
@@ -67,8 +67,8 @@ function BakeryScene() {
   useFrame((state) => {
     if (groupRef.current) {
       // state.pointer ranges from -1 to 1 on x and y
-      const targetRotationY = baseRotationY + (state.pointer.x * 0.5);
-      const targetRotationX = state.pointer.y * 0.15;
+      const targetRotationY = baseRotationY + (state.pointer.x * 0.25);
+      const targetRotationX = state.pointer.y * 0.1;
       
       // Smooth interpolation for the entire group
       groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetRotationY, 0.05);
@@ -107,7 +107,7 @@ export default function Hero3DBakery() {
           <directionalLight position={[-10, 10, -5]} intensity={0.5} />
           
           <Bounds fit clip observe margin={0.55}>
-             <Center position={[0, -1, 0]}>
+             <Center position={[0, -0.2, 0]}>
                <BakeryScene />
              </Center>
           </Bounds>
