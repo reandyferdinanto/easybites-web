@@ -20,28 +20,28 @@ function HangingSign() {
   
   return (
     // Positioned relative to the bakery model
-    <group position={[-2.0, 3.5, 2.0]} ref={signRef}>
-      {/* Wire/pole */}
-      <mesh position={[0, 4, 0]}>
-        <cylinderGeometry args={[0.03, 0.03, 8, 16]} />
+    <group position={[-2.5, 3.5, 2.5]} ref={signRef}>
+      {/* Wire/pole - shortened by 1/4 */}
+      <mesh position={[0, 3, 0]}>
+        <cylinderGeometry args={[0.03, 0.03, 6, 16]} />
         <meshStandardMaterial color="#4a3f35" metalness={0.6} roughness={0.3} />
       </mesh>
       
       {/* Sign Frame */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[0.85, 0.85, 0.15, 64]} />
+        <cylinderGeometry args={[0.9, 0.9, 0.15, 64]} />
         <meshStandardMaterial color="#f25c54" metalness={0.1} roughness={0.4} />
       </mesh>
       
       {/* Front Face */}
       <mesh position={[0, 0, 0.076]}>
-        <circleGeometry args={[0.8, 64]} />
+        <circleGeometry args={[0.85, 64]} />
         <meshBasicMaterial map={logoTexture} transparent alphaTest={0.5} />
       </mesh>
       
       {/* Back Face */}
       <mesh position={[0, 0, -0.076]} rotation={[0, Math.PI, 0]}>
-        <circleGeometry args={[0.8, 64]} />
+        <circleGeometry args={[0.85, 64]} />
         <meshBasicMaterial map={logoTexture} transparent alphaTest={0.5} />
       </mesh>
     </group>
@@ -100,14 +100,14 @@ useTexture.preload('/images/logo.png');
 export default function Hero3DBakery() {
   return (
     <div className="w-full h-full absolute inset-0 z-20 cursor-move pointer-events-auto">
-      <Canvas camera={{ position: [0, 5, 20], fov: 32 }}>
+      <Canvas camera={{ position: [0, 10, 20], fov: 35 }}>
         <Suspense fallback={null}>
           <ambientLight intensity={0.6} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} castShadow />
           <directionalLight position={[-10, 10, -5]} intensity={0.5} />
           
           <Bounds fit clip observe margin={0.55}>
-             <Center position={[0, 4, 0]}>
+             <Center position={[0, -1, 0]}>
                <BakeryScene />
              </Center>
           </Bounds>
