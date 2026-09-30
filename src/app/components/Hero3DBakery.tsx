@@ -88,6 +88,10 @@ function BakeryScene() {
         <primitive object={scene} />
         {/* The sign is inside the same group, so they move together */}
         <HangingSign />
+        {/* Dummy mesh to pull the bounding box center downwards, pushing the whole model visually UP */}
+        <mesh position={[0, -3.5, 0]} visible={false}>
+          <boxGeometry args={[0.1, 0.1, 0.1]} />
+        </mesh>
       </group>
     </Float>
   );
