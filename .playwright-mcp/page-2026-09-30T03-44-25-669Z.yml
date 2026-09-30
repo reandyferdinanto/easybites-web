@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: EASYBITES FRESHLY BAKED DAILY EASYBITES FRESHLY BAKED DAILY EASYBITES FRESHLY BAKED DAILY EASYBITES FRESHLY BAKED DAILY
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "EasyBites." [ref=e6] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Menu" [ref=e10] [cursor=pointer]:
+          - /url: /menu
+        - link "Blog" [ref=e11] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e13]:
+        - button [ref=e14]
+        - button "3" [ref=e18]
+  - main [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Fresh out of the oven!
+          - heading [level=1] [ref=e32]:
+            - text: Celebrate your day with
+            - generic [ref=e33]: Classic Bites.
+          - paragraph [ref=e36]: Premium quality seasonal cookies baked with love. Perfect for your everyday self-indulgence and happy moments.
+          - generic [ref=e37]:
+            - button "Order Now" [ref=e38]
+            - button "Our Menu" [ref=e41]
+        - generic [ref=e42]:
+          - img "Delicious Cookies" [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]: 🧈
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: Premium
+              - paragraph [ref=e50]: Real Butter
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: 100%
+            - paragraph [ref=e54]: Handmade
+      - generic [ref=e56]:
+        - generic [ref=e58]:
+          - heading "Chef Maria's Baking Tip" [level=2] [ref=e60]
+          - paragraph [ref=e61]: "\"For perfect Nastar, ensure your pineapple jam filling is slightly dry before wrapping it in dough. This prevents cracks during baking and keeps the outside beautifully golden!\""
+          - generic [ref=e62]:
+            - img "Chef Maria" [ref=e64]
+            - generic [ref=e65]:
+              - paragraph [ref=e66]: Chef Maria
+              - paragraph [ref=e67]: Head Baker
+        - generic [ref=e68]:
+          - heading "Baked fresh daily with a whole lot of love." [level=2] [ref=e69]
+          - paragraph [ref=e70]: We believe every day deserves a little celebration. Our cookies are crafted using traditional recipes passed down through generations, but with a playful modern twist that makes every bite unforgettable.
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]: ✓
+              - text: No Preservatives
+            - generic [ref=e74]:
+              - generic [ref=e75]: ✓
+              - text: Real Fruits
+            - generic [ref=e76]:
+              - generic [ref=e77]: ✓
+              - text: Premium Cheese
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Seasonal Favorites" [level=2] [ref=e81]
+            - paragraph [ref=e82]: Our most loved cookies this season. Grab them before they're gone!
+          - button "View full menu" [ref=e83]
+        - generic [ref=e86]:
+          - generic [ref=e87] [cursor=pointer]:
+            - generic [ref=e88]:
+              - generic [ref=e89]: Best Seller
+              - img "Premium Nastar" [ref=e91]
+              - button [ref=e92]
+            - heading "Premium Nastar" [level=3] [ref=e95]
+            - paragraph [ref=e96]: Classic melt-in-mouth pineapple tart.
+            - generic [ref=e97]: Rp 120.000
+          - generic [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]:
+              - generic [ref=e100]: Cheese Lover
+              - img "Kaastengel" [ref=e102]
+              - button [ref=e103]
+            - heading "Kaastengel" [level=3] [ref=e106]
+            - paragraph [ref=e107]: Savory Dutch-Indonesian cheese stick.
+            - generic [ref=e108]: Rp 135.000
+          - generic [ref=e109] [cursor=pointer]:
+            - generic [ref=e110]:
+              - img "Putri Salju" [ref=e112]
+              - button [ref=e113]
+            - heading "Putri Salju" [level=3] [ref=e116]
+            - paragraph [ref=e117]: Crescent-shaped cookies coated in powdered sugar.
+            - generic [ref=e118]: Rp 110.000
+          - generic [ref=e119] [cursor=pointer]:
+            - generic [ref=e120]:
+              - generic [ref=e121]: New
+              - img "Choco Cashew" [ref=e123]
+              - button [ref=e124]
+            - heading "Choco Cashew" [level=3] [ref=e127]
+            - paragraph [ref=e128]: Rich chocolate dough studded with roasted cashews.
+            - generic [ref=e129]: Rp 125.000
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - heading "Discover your perfect match." [level=2] [ref=e133]
+          - paragraph [ref=e134]: Not sure what to try? Explore our flavors by profile. Whether you love something savory, completely sweet, or somewhere magically in between.
+          - button "Take the Flavor Quiz" [ref=e135]
+        - generic [ref=e136]:
+          - generic [ref=e137] [cursor=pointer]: Rich & Savory
+          - generic [ref=e138] [cursor=pointer]: Fruity & Tart
+          - generic [ref=e139] [cursor=pointer]: Deep Chocolate
+          - generic [ref=e140] [cursor=pointer]: Sweet Vanilla
+  - contentinfo [ref=e141]:
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "EasyBites." [level=5] [ref=e145]
+          - paragraph [ref=e146]: Joyful everyday treats. We bake with love, premium ingredients, and a touch of modern magic.
+          - generic [ref=e147]:
+            - link "I" [ref=e148] [cursor=pointer]:
+              - /url: "#"
+            - link "T" [ref=e150] [cursor=pointer]:
+              - /url: "#"
+            - link "T" [ref=e152] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e154]:
+          - heading "Explore" [level=5] [ref=e155]
+          - list [ref=e156]:
+            - listitem [ref=e157]:
+              - link "Home" [ref=e158] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e159]:
+              - link "Our Menu" [ref=e160] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e161]:
+              - link "Baking Blog" [ref=e162] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e163]:
+              - link "Contact Us" [ref=e164] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e165]:
+          - heading "Say Hello" [level=5] [ref=e166]
+          - list [ref=e167]:
+            - listitem [ref=e168]:
+              - strong [ref=e169]: Visit Us
+              - text: 123 Bakery Street, Sweet City
+            - listitem [ref=e170]:
+              - strong [ref=e171]: Call Us
+              - text: +1 (555) 123-4567
+            - listitem [ref=e172]:
+              - strong [ref=e173]: Email
+              - text: hello@easybites.com
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: © 2026 EasyBites Bakery. All rights reserved.
+        - generic [ref=e176]:
+          - link "Privacy Policy" [ref=e177] [cursor=pointer]:
+            - /url: "#"
+          - link "Terms of Service" [ref=e178] [cursor=pointer]:
+            - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e184] [cursor=pointer]
