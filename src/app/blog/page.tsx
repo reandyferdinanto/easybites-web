@@ -56,10 +56,6 @@ export default async function BlogPage() {
             Tulis Artikel
           </Link>
         </div>
-          <Link href="/blog/new" className="px-6 py-3 bg-brand text-white font-bold rounded-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-            Write an Article
-          </Link>
-        </div>
 
         {/* Featured Post Card */}
         {featuredPost && (

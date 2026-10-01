@@ -4,14 +4,15 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
-export default async function EditBlogPage({ params }: { params: { id: string } }) {
-  const post = await getPost(params.id);
+export default async function EditBlogPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const post = await getPost(resolvedParams.id);
   
   if (!post) {
     notFound();
   }
 
-  const updatePostWithId = updatePost.bind(null, params.id);
+  const updatePostWithId = updatePost.bind(null, resolvedParams.id);
 
   return (
     <div>

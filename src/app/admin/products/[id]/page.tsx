@@ -4,14 +4,15 @@ import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
-export default async function EditProductPage({ params }: { params: { id: string } }) {
-  const product = await getProduct(params.id);
+export default async function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const product = await getProduct(resolvedParams.id);
   
   if (!product) {
     notFound();
   }
 
-  const updateProductWithId = updateProduct.bind(null, params.id);
+  const updateProductWithId = updateProduct.bind(null, resolvedParams.id);
 
   return (
     <div>
