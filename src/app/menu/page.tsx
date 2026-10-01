@@ -41,8 +41,8 @@ export default function MenuPage() {
             Bite into <span className="text-brand">Happiness.</span>
           </h1>
           <p className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto">
-            Explore our complete collection of handmade, premium cookies. 
-            Perfectly baked for your everyday indulgence or sharing with loved ones.
+            Jelajahi koleksi lengkap kue premium buatan tangan kami.
+            Dipanggang dengan sempurna untuk camilan harian Anda atau untuk dibagikan dengan orang tersayang.
           </p>
         </div>
       </section>

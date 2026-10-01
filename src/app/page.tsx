@@ -1,7 +1,7 @@
 'use client';
 
 import Hero3DBakery from './components/Hero3DBakery';
-import { Croissant, Citrus, Cookie, CakeSlice } from 'lucide-react';
+import { Croissant, Citrus, Cookie, CakeSlice, UserRound } from 'lucide-react';
 import { useCartStore } from './store/cartStore';
 import { useEffect, useState } from 'react';
 
@@ -101,37 +101,36 @@ export default function Home() {
           <div className="col-span-1 lg:col-span-5 relative z-10">
             <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-[100px] -z-10 group-hover:bg-brand/10 transition-colors duration-500"></div>
-              <h2 className="text-3xl font-display text-text mb-4">Chef Maria&apos;s <br/><span className="text-accent italic">Baking Tip</span></h2>
+              <h2 className="text-3xl font-display text-text mb-4">Owner&apos;s <br/><span className="text-accent italic">Tips</span></h2>
               <p className="text-text-muted text-lg italic leading-relaxed mb-6">
-                &quot;For perfect Nastar, ensure your pineapple jam filling is slightly dry before wrapping it in dough. This prevents cracks during baking and keeps the outside beautifully golden!&quot;
+                &quot;Untuk hasil Nastar yang sempurna, pastikan selai nanas sedikit kering sebelum dibungkus dengan adonan. Ini akan mencegah adonan pecah saat dipanggang dan menjaga warna luar tetap cantik keemasan!&quot;
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-accent p-1">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Chef Maria" className="w-full h-full object-cover rounded-full" />
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-accent p-1 bg-surface-alt flex items-center justify-center text-text-muted">
+                  <UserRound className="w-8 h-8" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <p className="font-bold text-text">Chef Maria</p>
-                  <p className="text-sm font-semibold text-brand">Head Baker</p>
+                  <p className="font-bold text-text">Reandy & Nadhira</p>
+                  <p className="text-sm font-semibold text-brand">Owner</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="col-span-1 lg:col-span-7 lg:pl-12">
-            <h2 className="text-3xl md:text-4xl font-display text-text mb-6">Baked fresh daily <br/>with a whole lot of love.</h2>
+            <h2 className="text-3xl md:text-4xl font-display text-text mb-6">Dipanggang segar setiap hari <br/>dengan penuh cinta.</h2>
             <p className="text-text-muted text-lg mb-8 max-w-2xl">
-              We believe every day deserves a little celebration. Our cookies are crafted using traditional recipes passed down through generations, but with a playful modern twist that makes every bite unforgettable.
+              Kami percaya setiap hari layak dirayakan. Kue-kue kami dibuat menggunakan resep tradisional yang diwariskan turun-temurun, namun dengan sentuhan modern yang menyenangkan untuk membuat setiap gigitan tak terlupakan.
             </p>
             <div className="flex flex-wrap gap-4">
               <span className="px-5 py-3 bg-white rounded-full font-bold text-text-muted shadow-sm flex items-center gap-2">
-                <span className="text-accent">✓</span> No Preservatives
+                <span className="text-accent">✓</span> Tanpa Pengawet
               </span>
               <span className="px-5 py-3 bg-white rounded-full font-bold text-text-muted shadow-sm flex items-center gap-2">
-                <span className="text-brand">✓</span> Real Fruits
+                <span className="text-brand">✓</span> Buah Asli
               </span>
               <span className="px-5 py-3 bg-white rounded-full font-bold text-text-muted shadow-sm flex items-center gap-2">
-                <span className="text-amber-500">✓</span> Premium Cheese
+                <span className="text-amber-500">✓</span> Keju Premium
               </span>
             </div>
           </div>
@@ -144,10 +143,10 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-display text-text mb-4">Seasonal Favorites</h2>
-            <p className="text-text-muted text-lg max-w-md">Our most loved cookies this season. Grab them before they&apos;re gone!</p>
+            <p className="text-text-muted text-lg max-w-md">Kue kering favorit musim ini. Dapatkan sebelum kehabisan!</p>
           </div>
           <button className="text-brand font-bold hover:text-text transition-colors flex items-center gap-2 group">
-            View full menu
+            Lihat menu lengkap
             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
           </button>
         </div>

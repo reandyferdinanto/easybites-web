@@ -40,7 +40,7 @@ export default function CheckoutPage() {
   };
 
   const generateWhatsAppLink = () => {
-    const adminPhone = '6281234567890'; // Ganti dengan nomor WA admin
+    const adminPhone = '6281315341342'; // Ganti dengan nomor WA admin
     let message = `Halo Admin EasyBites, saya ingin konfirmasi pesanan dan pembayaran transfer bank:\n\n`;
     message += `*Data Pemesan:*\n`;
     message += `Nama: ${formData.name}\n`;

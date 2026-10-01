@@ -32,14 +32,14 @@ export default async function BlogPage() {
   // Using a properly formatted date explicitly to avoid hydration mismatch
   const formatDate = (dateInput: Date | string) => {
     const d = new Date(dateInput);
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat('id-ID', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
     }).format(d);
   };
 
-  const categories = ['All Stories', 'Recipes', 'Baking Tips', 'Tutorials', 'Science', 'News & Events'];
+  const categories = ['Semua Artikel', 'Recipes', 'Baking Tips', 'Tutorials', 'News & Events'];
 
   return (
     <div className="w-full flex flex-col min-h-screen">
@@ -47,9 +47,15 @@ export default async function BlogPage() {
       <section className="relative w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-16">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="relative z-10">
-            <span className="inline-block py-1 px-4 rounded-full bg-brand/10 text-brand font-bold text-sm mb-4 border border-brand/20">The EasyBites Journal</span>
-            <h1 className="text-5xl md:text-6xl font-display text-text">Stories & <span className="text-accent">Recipes</span>.</h1>
+            <span className="inline-block py-1 px-4 rounded-full bg-brand/10 text-brand font-bold text-sm mb-4 border border-brand/20">Jurnal EasyBites</span>
+            <h1 className="text-5xl md:text-7xl font-display text-text">
+              Cerita & <span className="text-accent">Resep</span>
+            </h1>
           </div>
+          <Link href="/admin/blog/new" className="px-6 py-3 bg-brand text-white font-bold rounded-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            Tulis Artikel
+          </Link>
+        </div>
           <Link href="/blog/new" className="px-6 py-3 bg-brand text-white font-bold rounded-full hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
             Write an Article
           </Link>

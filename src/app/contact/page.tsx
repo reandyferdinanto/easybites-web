@@ -112,7 +112,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="mt-2 bg-brand text-white px-8 py-4 rounded-full font-bold text-lg hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
                   {!isSubmitting && (
                     <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
                   )}
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
           {/* Right Column: Info & Map */}
           <div className="flex flex-col">
-            <h2 className="text-3xl font-display text-text mb-8">Visit the Bakery</h2>
+            <h2 className="text-3xl font-display text-text mb-8">Kunjungi Toko Kami</h2>
             
             <div className="flex flex-col gap-8 mb-10">
               {/* Info Cards */}
@@ -132,37 +132,50 @@ export default function ContactPage() {
                   <div className="w-10 h-10 rounded-full bg-brand/10 text-brand flex items-center justify-center mb-4">
                     <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>
-                  <h4 className="font-bold text-text mb-1">Our Location</h4>
+                  <h4 className="font-bold text-text mb-1">Main Store</h4>
                   <p className="text-text-muted text-sm leading-relaxed">
-                    123 Bakery Street, Sweet City<br />
-                    Indonesia 12345
+                    Jl Raya Hankam RT004/ RW005 No. 49<br />
+                    Ujung Aspal, Jatiranggon, Bekasi
                   </p>
                 </div>
 
                 <div className="bg-surface-alt p-6 rounded-3xl">
                   <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>
-                  <h4 className="font-bold text-text mb-1">Opening Hours</h4>
+                  <h4 className="font-bold text-text mb-1">Branch Store</h4>
                   <p className="text-text-muted text-sm leading-relaxed">
-                    Mon-Fri: 08:00 AM - 08:00 PM<br />
-                    Sat-Sun: 09:00 AM - 06:00 PM
+                    Jl. Haji Nawi RT005 / RW013 No. A2<br />
+                    Jatimakmur, Pondok Gede, Bekasi
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="bg-surface-alt p-6 rounded-3xl">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
                   </div>
-                  <span className="font-bold text-text">+1 (555) 123-4567</span>
+                  <h4 className="font-bold text-text mb-1">Jam Operasional</h4>
+                  <p className="text-text-muted text-sm leading-relaxed">
+                    Sen-Jum: 08:00 - 20:00<br />
+                    Sab-Min: 09:00 - 18:00
+                  </p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                
+                <div className="flex flex-col gap-4 justify-center">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
+                      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span className="font-bold text-text">0813 1534 1342</span>
                   </div>
-                  <span className="font-bold text-text">hello@easybites.com</span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+                    </div>
+                    <a href="https://instagram.com/easybites.baking" target="_blank" rel="noreferrer" className="font-bold text-text hover:text-brand transition-colors">@easybites.baking</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -190,7 +203,7 @@ export default function ContactPage() {
               </a>
             </div>
             <p className="text-center text-text-muted text-xs mt-3">
-              * Map location embedded based on the provided share link.
+              * Lokasi peta tertanam berdasarkan tautan yang dibagikan.
             </p>
 
           </div>
