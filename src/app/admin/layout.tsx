@@ -3,9 +3,9 @@ import { LayoutDashboard, Package, FileText, Store } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-surface-alt flex">
-      {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-surface-alt flex flex-col shadow-sm hidden md:flex">
+    <div className="min-h-screen bg-surface-alt flex flex-col md:flex-row pb-20 md:pb-0">
+      {/* Desktop Sidebar */}
+      <aside className="w-64 bg-white border-r border-surface-alt flex-col shadow-sm hidden md:flex sticky top-0 h-screen">
         <div className="p-6 border-b border-surface-alt">
           <Link href="/admin" className="font-display font-bold text-2xl text-brand">
             EB Admin
@@ -34,17 +34,35 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 overflow-auto">
+      <main className="flex-1 overflow-auto w-full">
         {/* Mobile Header */}
-        <header className="md:hidden bg-white border-b border-surface-alt p-4 flex justify-between items-center">
+        <header className="md:hidden bg-white border-b border-surface-alt p-4 flex justify-between items-center sticky top-0 z-30">
           <span className="font-display font-bold text-xl text-brand">EB Admin</span>
-          <Link href="/" className="text-text-muted text-sm font-bold">Ke Toko</Link>
+          <Link href="/" className="text-text-muted hover:text-brand transition-colors">
+            <Store className="w-5 h-5" />
+          </Link>
         </header>
 
-        <div className="p-6 md:p-10">
+        <div className="p-4 sm:p-6 md:p-10 max-w-[100vw] overflow-x-hidden">
           {children}
         </div>
       </main>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-surface-alt shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-40 flex justify-around items-center p-2 pb-safe">
+        <Link href="/admin" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
+          <LayoutDashboard className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Dash</span>
+        </Link>
+        <Link href="/admin/products" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
+          <Package className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Produk</span>
+        </Link>
+        <Link href="/admin/blog" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
+          <FileText className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Blog</span>
+        </Link>
+      </nav>
     </div>
   );
 }
