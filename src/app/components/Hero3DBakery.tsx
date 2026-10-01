@@ -55,13 +55,31 @@ function BakeryScene() {
   // Base rotation (approx 45 degrees to show front and side)
   const baseRotationY = -Math.PI / 4;
   
-  // Set initial rotation
+  // Set initial rotation and update materials
   useEffect(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y = baseRotationY;
       groupRef.current.position.y = 0; 
     }
-  }, [baseRotationY]);
+
+    // Ubah warna atap dan tenda menjadi hijau toska
+    scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        const parentName = mesh.parent?.name?.toLowerCase() || '';
+        
+        // Cek apakah ini bagian dari atap atau tenda (awning)
+        if (parentName.includes('roof') || parentName.includes('tent')) {
+          // Ganti material dengan warna Hijau Toska (Turquoise / Teal)
+          mesh.material = new THREE.MeshStandardMaterial({
+            color: '#20b2aa', // Hijau Toska (Light Sea Green)
+            roughness: 0.8,
+            metalness: 0.1,
+          });
+        }
+      }
+    });
+  }, [baseRotationY, scene]);
 
   // Animate rotation based on mouse position
   useFrame((state) => {

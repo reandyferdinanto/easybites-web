@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Fredoka, Nunito } from 'next/font/google';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CartSidebar from './components/CartSidebar';
 
 const displayFont = Fredoka({ 
   subsets: ['latin'],
@@ -27,10 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${displayFont.variable} ${bodyFont.variable}`}>
-      <body className="bg-surface text-text font-body selection:bg-brand selection:text-white flex flex-col min-h-screen">
+    <html lang="en">
+      <body className={`${displayFont.variable} ${bodyFont.variable} font-body bg-surface text-text antialiased selection:bg-accent/30 selection:text-text`}>
         <Navbar />
-        <main className="flex-1 w-full flex flex-col">
+        <CartSidebar />
+        <main className="min-h-screen">
           {children}
         </main>
         <Footer />
