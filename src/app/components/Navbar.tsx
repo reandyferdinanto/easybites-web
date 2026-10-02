@@ -1,8 +1,9 @@
 'use client';
 import Link from 'next/link';
 import { useCartStore } from '../store/cartStore';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Search, ShoppingBag, Menu, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const toggleCart = useCartStore((state) => state.toggleCart);
@@ -10,6 +11,38 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  // Secret Admin Trigger Logic
+  const clickCount = useRef(0);
+  const clickTimer = useRef<NodeJS.Timeout | null>(null);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent direct navigation to handle secret trigger
+    
+    clickCount.current += 1;
+    
+    if (clickCount.current === 3) {
+      // Secret triggered! Reset and redirect
+      clickCount.current = 0;
+      if (clickTimer.current) clearTimeout(clickTimer.current);
+      setIsMobileMenuOpen(false);
+      router.push('/admin');
+      return;
+    }
+
+    if (clickTimer.current) clearTimeout(clickTimer.current);
+    
+    // Reset click count after 600ms of inactivity
+    clickTimer.current = setTimeout(() => {
+      // If they only clicked once or twice and stopped, just go to home
+      if (clickCount.current < 3) {
+        setIsMobileMenuOpen(false);
+        router.push('/');
+      }
+      clickCount.current = 0;
+    }, 600);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -46,7 +79,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center relative">
           
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-center group relative z-20" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link href="/" className="flex flex-col items-center group relative z-20 cursor-pointer" onClick={handleLogoClick}>
             <div className={`rounded-full overflow-hidden shadow-sm animate-[coin-flip_18s_ease-in-out_infinite] bg-white border border-brand/10 transition-all duration-500 ease-out-expo ${isScrolled ? 'w-9 h-9 md:w-10 md:h-10' : 'w-12 h-12 md:w-14 md:h-14'}`}>
               <img src="/images/logo.png" alt="EasyBites Logo" className="w-full h-full object-cover scale-[1.05] group-hover:scale-110 transition-transform origin-center duration-500" />
             </div>
@@ -123,14 +156,6 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Link 
-            href="/admin" 
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`mt-4 px-6 py-2 bg-brand/10 text-brand rounded-full font-bold transition-all transform ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
-            style={{ transitionDelay: `${navLinks.length * 100}ms` }}
-          >
-            Admin Panel
-          </Link>
         </nav>
       </div>
     </>

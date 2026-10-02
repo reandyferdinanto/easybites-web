@@ -98,11 +98,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-surface flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-muted font-medium">
-          <p>&copy; {new Date().getFullYear()} EasyBites Bakery. Hak Cipta Dilindungi.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-brand">Kebijakan Privasi</Link>
-            <Link href="#" className="hover:text-brand">Syarat & Ketentuan</Link>
+        <div className="pt-8 border-t border-surface flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-text-muted font-medium text-center md:text-left">
+          <p>
+            &copy; {new Date().getFullYear()} EasyBites Bakery. Hak Cipta Dilindungi.<br className="md:hidden" />
+            <span className="md:ml-1 opacity-70">3D Bakery Model by <a href="https://sketchfab.com/stokhuis" target="_blank" rel="noreferrer" className="hover:text-brand underline decoration-brand/30 underline-offset-2">Bjarne Stokhof</a> under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer" className="hover:text-brand underline decoration-brand/30 underline-offset-2">CC BY 4.0</a>.</span>
+          </p>
+          <div className="flex gap-4 sm:gap-6 mt-2 md:mt-0">
+            <Link href="#" className="hover:text-brand transition-colors">Kebijakan Privasi</Link>
+            <Link href="#" className="hover:text-brand transition-colors">Syarat & Ketentuan</Link>
           </div>
         </div>
       </div>
