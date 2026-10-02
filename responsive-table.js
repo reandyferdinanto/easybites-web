@@ -1,25 +1,9 @@
-import { getPosts, deletePost } from '../actions';
-import Link from 'next/link';
-import { Plus, Edit2, Trash2, Image as ImageIcon } from 'lucide-react';
+const fs = require('fs');
 
-export const dynamic = 'force-dynamic';
+const file = 'src/app/admin/recipes/page.tsx';
+let content = fs.readFileSync(file, 'utf8');
 
-export default async function AdminRecipesPage() {
-  const posts = await getPosts();
-
-  return (
-    <div>
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-        <div>
-          <h1 className="text-3xl font-display font-bold">Resep</h1>
-          <p className="text-text-muted">Kelola resep andalan EasyBites.</p>
-        </div>
-        <Link href="/admin/recipes/new" className="bg-brand text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg transition-all w-full sm:w-auto justify-center">
-          <Plus className="w-5 h-5" /> Tulis Resep
-        </Link>
-      </div>
-
-      <div className="bg-white rounded-[2rem] border border-surface-alt overflow-hidden">
+const replacement = `<div className="bg-white rounded-[2rem] border border-surface-alt overflow-hidden">
         {/* Desktop Table */}
         <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse">
@@ -63,7 +47,7 @@ export default async function AdminRecipesPage() {
                     </td>
                     <td className="p-4 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <Link href={`/admin/recipes/${post.id}`} className="p-2 text-text-muted hover:text-brand hover:bg-brand/10 rounded-lg transition-colors">
+                        <Link href={\`/admin/recipes/\${post.id}\`} className="p-2 text-text-muted hover:text-brand hover:bg-brand/10 rounded-lg transition-colors">
                           <Edit2 className="w-5 h-5" />
                         </Link>
                         <form action={async () => {
@@ -114,7 +98,7 @@ export default async function AdminRecipesPage() {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 mt-3">
-                      <Link href={`/admin/recipes/${post.id}`} className="flex-1 py-2 bg-brand/10 text-brand font-bold text-sm text-center rounded-lg hover:bg-brand hover:text-white transition-colors">
+                      <Link href={\`/admin/recipes/\${post.id}\`} className="flex-1 py-2 bg-brand/10 text-brand font-bold text-sm text-center rounded-lg hover:bg-brand hover:text-white transition-colors">
                         Edit
                       </Link>
                       <form action={async () => {
@@ -132,7 +116,7 @@ export default async function AdminRecipesPage() {
             </div>
           )}
         </div>
-      </div>
-    </div>
-  );
-}
+      </div>`;
+
+content = content.replace(/<div className="bg-white rounded-\[2rem\] border border-surface-alt overflow-hidden">[\s\S]*?<\/table>\s*<\/div>\s*<\/div>/, replacement);
+fs.writeFileSync(file, content, 'utf8');

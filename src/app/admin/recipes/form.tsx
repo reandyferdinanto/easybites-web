@@ -146,7 +146,7 @@ export default function RecipeForm({
               />
             </div>
             
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div>
                 <label className="block text-xs font-bold text-text-muted mb-1">Prep Time</label>
                 <input type="text" value={prepTime} onChange={e => setPrepTime(e.target.value)} placeholder="Misal: 15 mins" className="w-full bg-surface border border-surface-alt px-3 py-2 rounded-lg text-sm" />
@@ -169,11 +169,13 @@ export default function RecipeForm({
               </div>
               <div className="space-y-2">
                 {ingredients.map((ing, idx) => (
-                  <div key={idx} className="flex gap-2 items-center">
-                    <input type="text" placeholder="Nama Bahan" value={ing.item} onChange={e => updateIngredient(idx, "item", e.target.value)} className="flex-1 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
-                    <input type="number" step="any" placeholder="Jumlah" value={ing.amount} onChange={e => updateIngredient(idx, "amount", e.target.value)} className="w-20 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
-                    <input type="text" placeholder="Satuan (g, ml)" value={ing.unit} onChange={e => updateIngredient(idx, "unit", e.target.value)} className="w-24 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
-                    <button type="button" onClick={() => removeIngredient(idx)} className="text-red-400 hover:text-red-600 p-1"><Trash2 className="w-4 h-4"/></button>
+                  <div key={idx} className="flex flex-wrap sm:flex-nowrap gap-2 items-center bg-white sm:bg-transparent p-3 sm:p-0 rounded-xl sm:rounded-none border sm:border-0 border-surface-alt mb-2 sm:mb-0">
+                    <input type="text" placeholder="Nama Bahan" value={ing.item} onChange={e => updateIngredient(idx, "item", e.target.value)} className="w-full sm:flex-1 bg-surface sm:bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
+                    <div className="flex gap-2 w-full sm:w-auto">
+                      <input type="number" step="any" placeholder="Jumlah" value={ing.amount} onChange={e => updateIngredient(idx, "amount", e.target.value)} className="flex-1 sm:w-20 bg-surface sm:bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
+                      <input type="text" placeholder="Satuan (g, ml)" value={ing.unit} onChange={e => updateIngredient(idx, "unit", e.target.value)} className="flex-1 sm:w-24 bg-surface sm:bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm" />
+                      <button type="button" onClick={() => removeIngredient(idx)} className="text-red-400 hover:text-red-600 p-2 sm:p-1 bg-red-50 sm:bg-transparent rounded-lg"><Trash2 className="w-5 h-5 sm:w-4 sm:h-4"/></button>
+                    </div>
                   </div>
                 ))}
                 {ingredients.length === 0 && <p className="text-xs text-text-muted text-center py-2">Belum ada bahan ditambahkan.</p>}

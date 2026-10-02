@@ -15,12 +15,12 @@ async function ProductsList() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div>
           <h1 className="text-3xl font-display font-bold">Produk (Menu)</h1>
           <p className="text-text-muted">Kelola daftar produk EasyBites.</p>
         </div>
-        <Link href="/admin/products/new" className="bg-brand text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg transition-all">
+        <Link href="/admin/products/new" className="bg-brand text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg transition-all w-full sm:w-auto justify-center">
           <Plus className="w-5 h-5" /> Tambah Produk
         </Link>
       </div>

@@ -158,7 +158,7 @@ export default function RecipeDetailClient({ post }: { post: { title: string, ca
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
               {/* Ingredients Sidebar */}
-              <div className="lg:col-span-4 bg-surface-alt p-6 sm:p-8 rounded-[2rem] sticky top-32">
+              <div className="lg:col-span-4 bg-surface-alt p-6 sm:p-8 rounded-[2rem] lg:sticky lg:top-32">
                 <h3 className="text-2xl font-display font-bold text-text mb-6">Ingredients</h3>
                 
                 <div className="bg-white p-4 rounded-2xl mb-6 shadow-sm flex items-center justify-between">
