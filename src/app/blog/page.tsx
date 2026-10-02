@@ -44,7 +44,7 @@ export default async function BlogPage() {
   return (
     <div className="w-full flex flex-col min-h-screen">
       {/* Blog Hero & Featured Post */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-16">
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-12 md:pt-20 pb-16">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="relative z-10">
             <span className="inline-block py-1 px-4 rounded-full bg-brand/10 text-brand font-bold text-sm mb-4 border border-brand/20">Jurnal EasyBites</span>
@@ -104,7 +104,7 @@ export default async function BlogPage() {
       </section>
 
       {/* Category Pills & Grid */}
-      <section className="w-full bg-surface-alt py-20 px-6 md:px-12 relative overflow-hidden flex-1">
+      <section className="w-full bg-surface-alt py-20 px-4 sm:px-6 md:px-12 relative overflow-hidden flex-1">
         <div className="max-w-7xl mx-auto">
           
           <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-8 mb-4 border-b border-brand/10">

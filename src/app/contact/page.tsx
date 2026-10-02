@@ -24,7 +24,7 @@ export default function ContactPage() {
         <div className="absolute -top-20 -right-10 text-6xl animate-[float_6s_ease-in-out_infinite_reverse] opacity-60">💌</div>
         <div className="absolute bottom-10 left-10 text-5xl animate-[float_5s_ease-in-out_infinite] opacity-60">🍪</div>
         
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 text-center relative z-10">
           <span className="inline-block py-1 px-4 rounded-full bg-brand/10 text-brand font-bold text-sm mb-4 border border-brand/20">
             We&apos;d love to hear from you
           </span>
@@ -38,7 +38,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content (Form & Info) */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           
           {/* Left Column: Form */}
@@ -128,27 +128,37 @@ export default function ContactPage() {
             <div className="flex flex-col gap-8 mb-10">
               {/* Info Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-surface-alt p-6 rounded-3xl">
-                  <div className="w-10 h-10 rounded-full bg-brand/10 text-brand flex items-center justify-center mb-4">
+                <a 
+                  href="https://www.google.com/maps/place/Warpen+(Warung+Pepen)/@-6.3376917,106.9220363,17z"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-surface-alt p-6 rounded-3xl block hover:bg-brand/5 hover:scale-[1.02] transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-brand/10 text-brand flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>
-                  <h4 className="font-bold text-text mb-1">Main Store</h4>
+                  <h4 className="font-bold text-text mb-1 group-hover:text-brand transition-colors">Main Store</h4>
                   <p className="text-text-muted text-sm leading-relaxed">
                     Jl Raya Hankam RT004/ RW005 No. 49<br />
                     Ujung Aspal, Jatiranggon, Bekasi
                   </p>
-                </div>
+                </a>
 
-                <div className="bg-surface-alt p-6 rounded-3xl">
-                  <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4">
+                <a 
+                  href="https://www.google.com/maps/place/EasyBites+Baking/@-6.2901474,106.9359975,17z"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-surface-alt p-6 rounded-3xl block hover:bg-brand/5 hover:scale-[1.02] transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-accent/10 text-accent flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                   </div>
-                  <h4 className="font-bold text-text mb-1">Branch Store</h4>
+                  <h4 className="font-bold text-text mb-1 group-hover:text-brand transition-colors">Branch Store</h4>
                   <p className="text-text-muted text-sm leading-relaxed">
                     Jl. Haji Nawi RT005 / RW013 No. A2<br />
                     Jatimakmur, Pondok Gede, Bekasi
                   </p>
-                </div>
+                </a>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -164,18 +174,18 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="flex flex-col gap-4 justify-center">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
+                  <a href="https://wa.me/6281315341342" target="_blank" rel="noreferrer" className="flex items-center gap-3 group">
+                    <div className="w-10 h-10 rounded-full bg-surface-alt text-brand flex items-center justify-center group-hover:bg-brand/10 group-hover:scale-110 transition-all">
                       <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
-                    <span className="font-bold text-text">0813 1534 1342</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-surface-alt text-text-muted flex items-center justify-center">
+                    <span className="font-bold text-text group-hover:text-brand transition-colors">0813 1534 1342</span>
+                  </a>
+                  <a href="https://instagram.com/easybites.baking" target="_blank" rel="noreferrer" className="flex items-center gap-3 group">
+                    <div className="w-10 h-10 rounded-full bg-surface-alt text-brand flex items-center justify-center group-hover:bg-brand/10 group-hover:scale-110 transition-all">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
                     </div>
-                    <a href="https://instagram.com/easybites.baking" target="_blank" rel="noreferrer" className="font-bold text-text hover:text-brand transition-colors">@easybites.baking</a>
-                  </div>
+                    <span className="font-bold text-text group-hover:text-brand transition-colors">@easybites.baking</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -183,17 +193,15 @@ export default function ContactPage() {
             {/* Organic Google Maps Embed */}
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-[3rem] overflow-hidden shadow-lg border-4 border-white group">
               <div className="absolute inset-0 bg-brand/10 pointer-events-none z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-              {/* Google Maps iframe using a generic embed URL since the provided link is a share redirect link. */}
-              {/* Replace the src URL with the exact embed URL from Google Maps for production */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126938.86884639943!2d106.74103173787702!3d-6.186851410148408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f2341fff266d!2sJakarta%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1655184288079!5m2!1sen!2sid" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7988590968043!2d106.93599751105879!3d-6.290147361541351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698ddad8c0d9ed%3A0x506b378dbf520471!2sEasyBites%20Baking!5e0!3m2!1sen!2sid!4v1790911603305!5m2!1sen!2sid" 
                 className="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700"
-                allowFullScreen={false} 
+                allowFullScreen={true} 
                 loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
               ></iframe>
               <a 
-                href="https://share.google/QaA3PX2JqePjVj3Yn" 
+                href="https://www.google.com/maps/place/EasyBites+Baking/@-6.2901474,106.9359975,17z" 
                 target="_blank" 
                 rel="noreferrer"
                 className="absolute bottom-4 right-4 z-20 bg-white text-text font-bold px-4 py-2 rounded-full shadow-md text-sm hover:text-brand hover:scale-105 transition-all flex items-center gap-2"

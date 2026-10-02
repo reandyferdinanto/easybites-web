@@ -19,10 +19,10 @@ const Footer = () => {
          </svg>
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-12 md:mb-16">
           {/* Brand Column */}
-          <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="md:col-span-4 flex flex-col items-start text-left">
             <h5 className="font-display font-bold text-3xl text-brand mb-4">EasyBites.</h5>
             <p className="text-text-muted mb-6 max-w-sm">
               Camilan harian yang membawa kebahagiaan. Kami memanggang dengan cinta, bahan premium, dan sentuhan keajaiban modern.
@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="md:col-span-3 flex flex-col items-start text-left">
             <h5 className="font-display font-bold text-xl text-text mb-6">Jelajahi</h5>
             <ul className="flex flex-col gap-3">
               {[
@@ -55,36 +55,44 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="md:col-span-5 flex flex-col items-start text-left">
             <h5 className="font-display font-bold text-xl text-text mb-6">Kunjungi Kami</h5>
-            <ul className="flex flex-col gap-6 text-text-muted">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 shrink-0 text-brand" />
-                <div>
-                  <strong className="block text-text mb-1">Main Store</strong>
-                  Jl Raya Hankam RT004/ RW005 No. 49<br />Ujung Aspal, Jatiranggon, Bekasi
-                </div>
+            <ul className="flex flex-col gap-6 text-text-muted w-full">
+              <li>
+                <a href="https://www.google.com/maps/place/Warpen+(Warung+Pepen)/@-6.3376917,106.9220363,17z" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
+                  <MapPin className="w-5 h-5 mt-1 shrink-0 text-brand group-hover:scale-110 transition-transform" />
+                  <div className="group-hover:text-brand transition-colors">
+                    <strong className="block text-text mb-1 group-hover:text-brand transition-colors">Main Store</strong>
+                    Jl Raya Hankam RT004/ RW005 No. 49<br />Ujung Aspal, Jatiranggon, Bekasi
+                  </div>
+                </a>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 shrink-0 text-brand" />
-                <div>
-                  <strong className="block text-text mb-1">Branch Store</strong>
-                  Jl. Haji Nawi RT005 / RW013 No. A2<br />Jatimakmur, Pondok Gede, Bekasi
-                </div>
+              <li>
+                <a href="https://www.google.com/maps/place/EasyBites+Baking/@-6.2901474,106.9359975,17z" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
+                  <MapPin className="w-5 h-5 mt-1 shrink-0 text-brand group-hover:scale-110 transition-transform" />
+                  <div className="group-hover:text-brand transition-colors">
+                    <strong className="block text-text mb-1 group-hover:text-brand transition-colors">Branch Store</strong>
+                    Jl. Haji Nawi RT005 / RW013 No. A2<br />Jatimakmur, Pondok Gede, Bekasi
+                  </div>
+                </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-1 shrink-0 text-brand" />
-                <div>
-                  <strong className="block text-text mb-1">WhatsApp / Telepon</strong>
-                  <a href="https://wa.me/6281315341342" className="hover:text-brand transition-colors">0813 1534 1342</a>
-                </div>
+              <li>
+                <a href="https://wa.me/6281315341342" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
+                  <Phone className="w-5 h-5 mt-1 shrink-0 text-brand group-hover:scale-110 transition-transform" />
+                  <div className="group-hover:text-brand transition-colors">
+                    <strong className="block text-text mb-1 group-hover:text-brand transition-colors">WhatsApp / Telepon</strong>
+                    0813 1534 1342
+                  </div>
+                </a>
               </li>
-              <li className="flex items-start gap-3">
-                <InstagramIcon className="w-5 h-5 mt-1 shrink-0 text-brand" />
-                <div>
-                  <strong className="block text-text mb-1">Instagram</strong>
-                  <a href="https://instagram.com/easybites.baking" target="_blank" rel="noreferrer" className="hover:text-brand transition-colors">@easybites.baking</a>
-                </div>
+              <li>
+                <a href="https://instagram.com/easybites.baking" target="_blank" rel="noreferrer" className="flex items-start gap-3 group">
+                  <InstagramIcon className="w-5 h-5 mt-1 shrink-0 text-brand group-hover:scale-110 transition-transform" />
+                  <div className="group-hover:text-brand transition-colors">
+                    <strong className="block text-text mb-1 group-hover:text-brand transition-colors">Instagram</strong>
+                    @easybites.baking
+                  </div>
+                </a>
               </li>
             </ul>
           </div>

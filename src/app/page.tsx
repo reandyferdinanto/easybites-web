@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* Story & Tips Section */}
-      <section className="bg-surface-alt py-20 px-6 md:px-12 w-full mt-12 relative overflow-hidden">
+      <section className="bg-surface-alt py-16 sm:py-20 px-4 sm:px-6 md:px-12 w-full mt-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="col-span-1 lg:col-span-5 relative z-10">

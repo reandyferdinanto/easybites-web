@@ -49,7 +49,7 @@ export default function MenuPage() {
         <div className="absolute bottom-20 right-20 text-5xl animate-[float_5s_ease-in-out_infinite] opacity-80">🧀</div>
         <div className="absolute top-20 right-1/4 text-3xl animate-[float_7s_ease-in-out_infinite] opacity-60">🍫</div>
         
-        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-28 pb-20 md:pb-32 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-16 md:pt-28 pb-20 md:pb-32 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-display text-text mb-6">
             Bite into <span className="text-brand">Happiness.</span>
           </h1>
@@ -61,7 +61,7 @@ export default function MenuPage() {
       </section>
 
       {/* Main Content */}
-      <section className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <section className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16">
         
         {/* Menu Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-16">
@@ -124,7 +124,7 @@ export default function MenuPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="w-full bg-brand py-20 px-6 mt-12 text-center text-white relative overflow-hidden">
+      <section className="w-full bg-brand py-20 px-4 sm:px-6 mt-12 text-center text-white relative overflow-hidden">
         {/* Decorative SVG background */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

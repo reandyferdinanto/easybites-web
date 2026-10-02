@@ -74,7 +74,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-20">
       <Link href="/" className="inline-flex items-center gap-2 text-text-muted hover:text-brand font-bold mb-8 transition-colors group">
         <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
         Kembali
