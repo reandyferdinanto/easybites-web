@@ -169,11 +169,13 @@ export default function RecipeForm({
               </div>
               <div className="space-y-3">
                 {ingredients.map((ing, idx) => (
-                  <div key={idx} className="grid grid-cols-[1fr_1fr_auto] sm:flex sm:flex-row gap-2 items-center">
-                    <input type="text" placeholder="Nama Bahan" value={ing.item} onChange={e => updateIngredient(idx, "item", e.target.value)} className="col-span-3 sm:col-span-1 w-full sm:flex-1 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
-                    <input type="number" step="any" placeholder="Jumlah" value={ing.amount} onChange={e => updateIngredient(idx, "amount", e.target.value)} className="w-full sm:w-20 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
-                    <input type="text" placeholder="Satuan (g, ml)" value={ing.unit} onChange={e => updateIngredient(idx, "unit", e.target.value)} className="w-full sm:w-24 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
-                    <button type="button" onClick={() => removeIngredient(idx)} className="text-red-400 hover:text-red-600 p-2.5 sm:p-1.5 flex items-center justify-center bg-white sm:bg-transparent border border-surface-alt sm:border-0 rounded-lg transition-colors hover:bg-red-50"><Trash2 className="w-4 h-4"/></button>
+                  <div key={idx} className="flex flex-col sm:flex-row gap-2">
+                    <input type="text" placeholder="Nama Bahan" value={ing.item} onChange={e => updateIngredient(idx, "item", e.target.value)} className="w-full sm:flex-1 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
+                    <div className="flex flex-row gap-2 w-full sm:w-auto items-center">
+                      <input type="number" step="any" placeholder="Jumlah" value={ing.amount} onChange={e => updateIngredient(idx, "amount", e.target.value)} className="flex-1 sm:w-20 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
+                      <input type="text" placeholder="Satuan (g, ml)" value={ing.unit} onChange={e => updateIngredient(idx, "unit", e.target.value)} className="flex-1 sm:w-24 bg-white border border-surface-alt px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-brand" />
+                      <button type="button" onClick={() => removeIngredient(idx)} className="text-red-400 hover:text-red-600 p-2 sm:p-1.5 flex items-center justify-center bg-white sm:bg-transparent border border-surface-alt sm:border-0 rounded-lg transition-colors hover:bg-red-50 shrink-0"><Trash2 className="w-5 h-5 sm:w-4 sm:h-4"/></button>
+                    </div>
                   </div>
                 ))}
                 {ingredients.length === 0 && <p className="text-xs text-text-muted text-center py-2">Belum ada bahan ditambahkan.</p>}
