@@ -139,9 +139,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Package className="w-5 h-5" />
             Produk
           </Link>
-          <Link href="/admin/blog" className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-text hover:bg-brand/10 hover:text-brand transition-colors">
+          <Link href="/admin/recipes" className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-text hover:bg-brand/10 hover:text-brand transition-colors">
             <FileText className="w-5 h-5" />
-            Resep & Artikel
+            Resep
           </Link>
           {isAdminMain && (
             <Link href="/admin/users" className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-text hover:bg-brand/10 hover:text-brand transition-colors">
@@ -192,7 +192,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Package className="w-6 h-6" />
           <span className="text-[10px] font-bold">Produk</span>
         </Link>
-        <Link href="/admin/blog" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
+        <Link href="/admin/recipes" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
           <FileText className="w-6 h-6" />
           <span className="text-[10px] font-bold">Resep</span>
         </Link>

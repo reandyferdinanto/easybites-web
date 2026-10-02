@@ -60,7 +60,7 @@ export async function deleteProduct(id: string) {
   revalidatePath('/admin/products');
 }
 
-// --- BLOG POSTS ---
+// --- RECIPES ---
 export async function getPosts() {
   try {
     return await prisma.post.findMany({ orderBy: { createdAt: 'desc' } });
@@ -90,9 +90,9 @@ export async function createPost(formData: FormData) {
     data: { title, content, author, category, imageUrl },
   });
 
-  revalidatePath('/blog');
-  revalidatePath('/admin/blog');
-  redirect('/admin/blog');
+  revalidatePath('/recipes');
+  revalidatePath('/admin/recipes');
+  redirect('/admin/recipes');
 }
 
 export async function updatePost(id: string, formData: FormData) {
@@ -107,13 +107,13 @@ export async function updatePost(id: string, formData: FormData) {
     data: { title, content, author, category, imageUrl: imageUrl || undefined },
   });
 
-  revalidatePath('/blog');
-  revalidatePath('/admin/blog');
-  redirect('/admin/blog');
+  revalidatePath('/recipes');
+  revalidatePath('/admin/recipes');
+  redirect('/admin/recipes');
 }
 
 export async function deletePost(id: string) {
   await prisma.post.delete({ where: { id } });
-  revalidatePath('/blog');
-  revalidatePath('/admin/blog');
+  revalidatePath('/recipes');
+  revalidatePath('/admin/recipes');
 }

@@ -154,7 +154,7 @@ export default async function RecipesPage() {
       {/* Featured Recipe */}
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 -mt-12 relative z-20">
         {featuredPost && (
-          <Link href={`/blog/${featuredPost.id}`} className="block group">
+          <Link href={`/recipes/${featuredPost.id}`} className="block group">
             <div className="w-full bg-white rounded-[2rem] md:rounded-[3rem] shadow-xl shadow-brand/5 overflow-hidden flex flex-col lg:flex-row border border-surface-alt hover:shadow-2xl transition-all duration-500">
               {/* Image side */}
               <div className="w-full lg:w-3/5 relative aspect-square sm:aspect-video lg:aspect-auto h-[300px] sm:h-[400px] lg:h-auto overflow-hidden">
@@ -225,7 +225,7 @@ export default async function RecipesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {regularPosts.map((post, idx) => (
-              <Link href={`/blog/${post.id}`} key={post.id} className="group flex flex-col h-full bg-white rounded-[2rem] shadow-sm border border-surface-alt hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <Link href={`/recipes/${post.id}`} key={post.id} className="group flex flex-col h-full bg-white rounded-[2rem] shadow-sm border border-surface-alt hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div className="relative w-full aspect-[4/3] overflow-hidden">
                   <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-colors duration-500 z-10 pointer-events-none"></div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -263,7 +263,7 @@ export default async function RecipesPage() {
             ))}
           </div>
 
-          {/* Newsletter inside Blog */}
+          {/* Newsletter inside Recipes */}
           <div className="mt-24 bg-brand rounded-[3rem] p-8 sm:p-12 text-center relative overflow-hidden text-white shadow-xl">
              {/* Decorative Background */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-blob -z-0"></div>

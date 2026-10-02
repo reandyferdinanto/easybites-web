@@ -68,7 +68,7 @@ export default function RecipeDetailClient({ post }: { post: { title: string, ca
     <div className="w-full bg-surface min-h-screen pb-24">
       {/* Back button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-8 pb-4">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-text-muted hover:text-brand font-bold transition-colors group">
+        <Link href="/recipes" className="inline-flex items-center gap-2 text-text-muted hover:text-brand font-bold transition-colors group">
           <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           Back to Recipes
         </Link>

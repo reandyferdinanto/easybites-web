@@ -4,17 +4,17 @@ import { Plus, Edit2, Trash2, Image as ImageIcon } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
-export default async function AdminBlogPage() {
+export default async function AdminRecipesPage() {
   const posts = await getPosts();
 
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
         <div>
-          <h1 className="text-3xl font-display font-bold">Resep & Artikel</h1>
-          <p className="text-text-muted">Kelola resep, tips, dan cerita EasyBites.</p>
+          <h1 className="text-3xl font-display font-bold">Resep</h1>
+          <p className="text-text-muted">Kelola resep andalan EasyBites.</p>
         </div>
-        <Link href="/admin/blog/new" className="bg-brand text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg transition-all">
+        <Link href="/admin/recipes/new" className="bg-brand text-white px-6 py-3 rounded-full font-bold flex items-center gap-2 hover:-translate-y-1 hover:shadow-lg transition-all">
           <Plus className="w-5 h-5" /> Tulis Resep
         </Link>
       </div>
@@ -25,7 +25,7 @@ export default async function AdminBlogPage() {
             <thead>
               <tr className="bg-surface-alt text-text-muted text-sm uppercase tracking-wider">
                 <th className="p-4 font-bold">Gambar</th>
-                <th className="p-4 font-bold">Judul Resep / Artikel</th>
+                <th className="p-4 font-bold">Judul Resep</th>
                 <th className="p-4 font-bold">Kategori</th>
                 <th className="p-4 font-bold">Tanggal</th>
                 <th className="p-4 font-bold text-center">Aksi</th>
@@ -62,7 +62,7 @@ export default async function AdminBlogPage() {
                     </td>
                     <td className="p-4 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <Link href={`/admin/blog/${post.id}`} className="p-2 text-text-muted hover:text-brand hover:bg-brand/10 rounded-lg transition-colors">
+                        <Link href={`/admin/recipes/${post.id}`} className="p-2 text-text-muted hover:text-brand hover:bg-brand/10 rounded-lg transition-colors">
                           <Edit2 className="w-5 h-5" />
                         </Link>
                         <form action={async () => {
