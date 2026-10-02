@@ -1,6 +1,6 @@
 'use client';
 
-import { useCartStore } from '../store/cartStore';
+import { useCartStore } from '@/store/cartStore';
 import Link from 'next/link';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { useEffect, useState } from 'react';

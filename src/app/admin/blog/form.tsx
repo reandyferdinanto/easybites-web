@@ -6,7 +6,7 @@ export default function BlogForm({
   post, 
   action 
 }: { 
-  post?: { title?: string, content?: string, author?: string, category?: string, imageUrl?: string }, 
+  post?: { title?: string, content?: string, author?: string, category?: string | null, imageUrl?: string | null }, 
   action: (formData: FormData) => Promise<void> 
 }) {
   const [isUploading, setIsUploading] = useState(false);
@@ -31,22 +31,14 @@ export default function BlogForm({
       try {
         const parsed = JSON.parse(post.content);
         if (parsed.ingredients || parsed.steps) {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setIsRecipe(true);
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setRecipeDesc(parsed.description || '');
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setPrepTime(parsed.prepTime || '');
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setBakeTime(parsed.bakeTime || '');
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setServings(parsed.servings || '');
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setIngredients(parsed.ingredients || []);
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setSteps(parsed.steps || []);
         } else {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
           setContentRaw(post.content);
         }
       } catch {

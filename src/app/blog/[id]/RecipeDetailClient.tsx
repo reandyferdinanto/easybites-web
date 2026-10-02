@@ -19,7 +19,7 @@ type RecipeData = {
   steps?: string[];
 };
 
-export default function RecipeDetailClient({ post }: { post: { title: string, category: string, author: string, createdAt: Date, imageUrl: string, content: string } }) {
+export default function RecipeDetailClient({ post }: { post: { title: string, category: string | null, author: string, createdAt: Date, imageUrl: string | null, content: string } }) {
   const [multiplier, setMultiplier] = useState<number>(1);
   const [checkedSteps, setCheckedSteps] = useState<Record<number, boolean>>({});
 

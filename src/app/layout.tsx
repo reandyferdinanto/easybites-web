@@ -1,9 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Fredoka, Nunito } from 'next/font/google';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import CartSidebar from './components/CartSidebar';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import CartSidebar from '@/components/CartSidebar';
 
 const displayFont = Fredoka({ 
   subsets: ['latin'],

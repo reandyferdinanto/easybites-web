@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useCartStore } from '../store/cartStore';
+import { useCartStore } from '@/store/cartStore';
 import { useEffect, useState, useRef } from 'react';
 import { Search, ShoppingBag, Menu, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';

@@ -1,5 +1,5 @@
 'use client';
-import { useCartStore } from '../store/cartStore';
+import { useCartStore } from '@/store/cartStore';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { CheckCircle2, ChevronLeft, Building2 } from 'lucide-react';
