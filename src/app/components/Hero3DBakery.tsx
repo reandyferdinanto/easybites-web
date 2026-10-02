@@ -2,12 +2,17 @@
 
 import React, { Suspense, useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, Environment, Float, Bounds, Center, useTexture } from '@react-three/drei';
+import { OrbitControls, useGLTF, Environment, useTexture, Bounds, Center, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 function HangingSign() {
   const logoTexture = useTexture('/images/logo.png');
-  logoTexture.colorSpace = THREE.SRGBColorSpace;
+  // Avoid mutating values from useTexture directly outside of effects in React 18+
+  useEffect(() => {
+    logoTexture.colorSpace = THREE.SRGBColorSpace;
+    logoTexture.needsUpdate = true;
+  }, [logoTexture]);
+  
   const signRef = useRef<THREE.Group>(null);
 
   // Independent swaying animation for the sign

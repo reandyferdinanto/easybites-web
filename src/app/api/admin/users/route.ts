@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '../../../lib/prisma';
 
 // Helper for fallback if DB fails
-let fallbackAdmins = [
+const fallbackAdmins = [
   { id: '1', username: 'easybites.admin', password: 'elva123456', isMain: true }
 ];
 
@@ -12,7 +12,7 @@ export async function GET() {
       orderBy: { createdAt: 'asc' }
     });
     return NextResponse.json(admins);
-  } catch (error) {
+  } catch {
     console.warn("DB failed, using fallback admin data.");
     return NextResponse.json(fallbackAdmins);
   }
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
         }
       });
       return NextResponse.json(newAdmin);
-    } catch (error) {
+    } catch {
       console.warn("DB failed, storing in memory fallback.");
       const exists = fallbackAdmins.find(a => a.username === username);
       if (exists) {
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
       fallbackAdmins.push(newAdmin);
       return NextResponse.json(newAdmin);
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

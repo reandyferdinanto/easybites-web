@@ -17,7 +17,7 @@ export async function POST(request: Request) {
       admin = await prisma.admin.findUnique({
         where: { username }
       });
-    } catch (dbError) {
+    } catch {
       console.warn("Database connection failed. Using hardcoded auth.");
     }
 

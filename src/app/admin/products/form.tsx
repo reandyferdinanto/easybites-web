@@ -1,13 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Upload, X, Loader2 } from 'lucide-react';
 
 export default function ProductForm({ 
   product, 
   action 
 }: { 
-  product?: any, 
+  product?: { id: string; name: string; description: string; price: number; imageUrl: string | null; }, 
   action: (formData: FormData) => Promise<void> 
 }) {
   const [isUploading, setIsUploading] = useState(false);

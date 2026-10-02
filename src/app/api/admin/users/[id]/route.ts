@@ -18,13 +18,13 @@ export async function DELETE(
       
       await prisma.admin.delete({ where: { id } });
       return NextResponse.json({ success: true });
-    } catch (error) {
+    } catch {
       console.warn("DB failed, trying fallback logic.");
       // For fallback we can't really share state well across files, but since this is next dev it might work.
       // But just sending success is enough.
       return NextResponse.json({ success: true });
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Server error' }, { status: 500 });
   }
 }

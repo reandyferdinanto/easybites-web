@@ -20,7 +20,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         const data = JSON.parse(auth);
         setIsAuthenticated(true);
         setIsAdminMain(data.isMain);
-      } catch (e) {
+      } catch {
         localStorage.removeItem('eb_admin_auth');
       }
     }
@@ -50,7 +50,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       } else {
         setError(data.error || 'Login gagal');
       }
-    } catch (err) {
+    } catch {
       setError('Terjadi kesalahan. Coba lagi.');
     }
   };
@@ -141,7 +141,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <Link href="/admin/blog" className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-text hover:bg-brand/10 hover:text-brand transition-colors">
             <FileText className="w-5 h-5" />
-            Blog Posts
+            Resep & Artikel
           </Link>
           {isAdminMain && (
             <Link href="/admin/users" className="flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-text hover:bg-brand/10 hover:text-brand transition-colors">
@@ -194,7 +194,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </Link>
         <Link href="/admin/blog" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">
           <FileText className="w-6 h-6" />
-          <span className="text-[10px] font-bold">Blog</span>
+          <span className="text-[10px] font-bold">Resep</span>
         </Link>
         {isAdminMain && (
           <Link href="/admin/users" className="flex flex-col items-center gap-1 p-2 text-text-muted hover:text-brand">

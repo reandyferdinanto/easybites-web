@@ -19,7 +19,7 @@ type RecipeData = {
   steps?: string[];
 };
 
-export default function RecipeDetailClient({ post }: { post: any }) {
+export default function RecipeDetailClient({ post }: { post: { title: string, category: string, author: string, createdAt: Date, imageUrl: string, content: string } }) {
   const [multiplier, setMultiplier] = useState<number>(1);
   const [checkedSteps, setCheckedSteps] = useState<Record<number, boolean>>({});
 
@@ -123,7 +123,7 @@ export default function RecipeDetailClient({ post }: { post: any }) {
             {/* Description & Meta Info */}
             <div className="bg-white p-8 sm:p-10 rounded-[2rem] shadow-sm border border-surface-alt">
               <p className="text-lg text-text-muted leading-relaxed mb-8 italic">
-                "{recipeData.description}"
+                &quot;{recipeData.description}&quot;
               </p>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-surface-alt">

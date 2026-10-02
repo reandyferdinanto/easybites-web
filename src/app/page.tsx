@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const addItem = useCartStore((state) => state.addItem);
-  const [products, setProducts] = useState<any[]>([
+  const [products, setProducts] = useState<{ id: number | string; name: string; price: number; image: string; desc: string; tag: string }[]>([
     { id: 1, name: "Premium Nastar", price: 120000, image: "https://images.unsplash.com/photo-1590080874088-eec64895e423?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80", tag: "Best Seller", desc: "Classic melt-in-mouth pineapple tart." },
     { id: 2, name: "Kaastengel", price: 135000, image: "https://images.unsplash.com/photo-1605807646983-377bc5a7644e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80", tag: "Cheese Lover", desc: "Savory Dutch-Indonesian cheese stick." },
     { id: 3, name: "Putri Salju", price: 110000, image: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80", tag: "", desc: "Crescent-shaped cookies coated in powdered sugar." },
@@ -20,7 +20,7 @@ export default function Home() {
       .then(data => {
         if (data && data.length > 0) {
           // Format the DB products to match UI expectations
-          const formatted = data.map((p: any) => ({
+          const formatted = data.map((p: { id: string; name: string; price: number; imageUrl?: string; description: string; }) => ({
             id: p.id,
             name: p.name,
             price: p.price,
@@ -173,7 +173,7 @@ export default function Home() {
                 <button 
                   onClick={(e) => {
                     e.stopPropagation();
-                    addItem({ id: product.id, name: product.name, price: product.price, image: product.image });
+                    addItem({ id: String(product.id), name: product.name, price: product.price, image: product.image });
                   }}
                   className="absolute bottom-4 right-4 z-20 w-12 h-12 bg-white text-brand rounded-full flex items-center justify-center shadow-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-brand hover:text-white"
                 >

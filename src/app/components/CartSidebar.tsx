@@ -11,6 +11,7 @@ export default function CartSidebar() {
 
   useEffect(() => {
     setIsMounted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!isMounted) return null;

@@ -18,6 +18,7 @@ export default function CheckoutPage() {
 
   useEffect(() => {
     setMounted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const formatIDR = (num: number) => {

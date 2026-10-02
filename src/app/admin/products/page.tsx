@@ -5,8 +5,6 @@ import { Plus, Edit2, Trash2, Image as ImageIcon } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export default function AdminProductsPage() {
-  const products = []; // We use a fallback if the DB fails to fetch due to prisma issues in the test env, but let's try real data first. Let's make it async.
-  
   return (
     <ProductsList />
   );
@@ -46,7 +44,7 @@ async function ProductsList() {
                   </td>
                 </tr>
               ) : (
-                products.map((product: any) => (
+                products.map((product: { id: string; name: string; price: number; imageUrl: string | null; }) => (
                   <tr key={product.id} className="border-b border-surface-alt last:border-0 hover:bg-surface/50 transition-colors">
                     <td className="p-4">
                       {product.imageUrl ? (

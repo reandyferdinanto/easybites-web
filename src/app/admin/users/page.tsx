@@ -3,8 +3,15 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, UserPlus, Trash2, Key } from 'lucide-react';
 
+interface Admin {
+  id: string;
+  username: string;
+  password?: string;
+  isMain: boolean;
+}
+
 export default function AdminUsersPage() {
-  const [admins, setAdmins] = useState<any[]>([]);
+  const [admins, setAdmins] = useState<Admin[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
   
@@ -22,8 +29,8 @@ export default function AdminUsersPage() {
       const res = await fetch('/api/admin/users');
       const data = await res.json();
       setAdmins(Array.isArray(data) ? data : []);
-    } catch (e) {
-      console.error(e);
+    } catch {
+      console.error("Gagal mengambil data admin");
     } finally {
       setIsLoading(false);
     }
@@ -31,6 +38,7 @@ export default function AdminUsersPage() {
 
   useEffect(() => {
     fetchAdmins();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleAddAdmin = async (e: React.FormEvent) => {
@@ -51,7 +59,7 @@ export default function AdminUsersPage() {
       } else {
         alert(data.error || 'Gagal menambahkan admin');
       }
-    } catch (error) {
+    } catch {
       alert('Terjadi kesalahan sistem.');
     }
   };
@@ -69,7 +77,7 @@ export default function AdminUsersPage() {
         const data = await res.json();
         alert(data.error || 'Gagal menghapus admin');
       }
-    } catch (error) {
+    } catch {
       alert('Terjadi kesalahan sistem.');
     }
   };
@@ -95,7 +103,7 @@ export default function AdminUsersPage() {
       } else {
         setRevealError('Password admin utama salah');
       }
-    } catch (e) {
+    } catch {
       setRevealError('Terjadi kesalahan.');
     }
   };
